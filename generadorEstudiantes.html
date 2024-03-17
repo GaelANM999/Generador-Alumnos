@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generar alumnos</title>
-    <script>
-        var alumnos = "";
-        const apellidosEspanoles = [
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+
+
+
+
+    const apellidosEspanoles = [
   "García", "Rodríguez", "López", "Martínez", "Sánchez", "Pérez", "Martín", "González", "Hernández", "Díaz",
   "Moreno", "Álvarez", "Romero", "Fernández", "Ruiz", "Jiménez", "Ramos", "Vázquez", "Dominguez", "Gutiérrez",
   "Torres", "Serrano", "Molina", "Ortega", "Delgado", "Morales", "Suárez", "Ortiz", "Castro", "Rubio",
@@ -24,7 +29,7 @@
   "Gimeno", "Coronado", "Crespo", "Carrasco", "Pérez", "Aranda", "Gracia", "Rey", "Molina", "Arévalo",
   "Haro", "Guzmán", "Vicente", "Miranda", "Salamanca", "Jara", "Vila", "Cortés", "Barros", "Salvador",
   "Aguado", "Orellana", "Sobrino", "Palma", "Casado", "Guzmán", "Lara", "Barroso", "Bravo", "Castaño"];
-
+  
   const apellidosJaponeses = [
   "Suzuki", "Tanaka", "Watanabe", "Ito", "Yamamoto", "Nakamura", "Kobayashi", "Saito", "Takahashi", "Kato",
   "Yoshida", "Yamada", "Sasaki", "Yamaguchi", "Matsumoto", "Inoue", "Kimura", "Hayashi", "Shimizu", "Ikeda",
@@ -63,126 +68,146 @@ const nombresIngleses = [
 "Madison", "Avery", "Benjamin", "Charlotte", "Olivia", "William", "Scarlett", "Abigail", "Evelyn"];
 
 const nombresAlemanes = [
-  "Lukas", "Sophie", "Leon", "Lena", "Benjamin", "Mia", "Paul", "Emma", "Jonas", "Hannah",
-  "Luca", "Laura", "Finn", "Lara", "Maximilian", "Anna", "Tim", "Lea", "Moritz", "Lina",
-  "Felix", "Sarah", "Julian", "Johanna", "Nico", "Marie", "Philipp", "Emilia", "Elias", "Sophia",
-  "Anton", "Leonie", "Tom", "Amelie", "Fabian", "Clara", "Mats", "Paula", "Jakob", "Mara",
-  "Jannik", "Isabella", "Luis", "Emily", "David", "Julia", "Oskar", "Zoe", "Nils", "Emily",
-  "Simon", "Jasmin", "Niklas", "Matilda", "Jonathan", "Victoria", "Vincent", "Maja", "Linus", "Charlotte",
-  "Samuel", "Anastasia", "Pauline", "Maja", "Philip", "Rosa", "Emil", "Sophie", "Leonard", "Nele",
-  "Joel", "Melina", "Marlon", "Celine", "Bennet", "Paulina", "Nikolai", "Theresa", "Milo", "Caroline",
-  "Robin", "Mara", "Tobias", "Isabel", "Julius", "Valentina", "Erik", "Vanessa", "Max", "Felicia",
-  "Dominik", "Elisabeth", "Jan", "Pauline", "Samuel", "Jana", "Kai", "Jolina", "Julius", "Lotta",
-  "Levi", "Helen", "Jannis", "Alina", "Maxim", "Alicia", "Liam", "Anna-Lena", "Lincoln", "Isabelle",
-  "Finnley", "Johanna", "Theo", "Anja", "Luca", "Amalia", "Lennart", "Marleen", "Matti", "Alisa",
-  "Noah", "Vivien", "Henry", "Lucia", "Emilio", "Annika", "Jona", "Frieda", "Marcel", "Leona",
-  "Adrian", "Elisa", "Karl", "Livia", "Hannes", "Paula", "Marvin", "Thalia", "Jasper", "Henriette",
-  "Ferdinand", "Emelie", "Darian", "Fiona", "Tristan", "Elena", "Marius", "Livia", "Fabio", "Felicitas",
-  "Leonardo", "Melissa", "Samson", "Nora", "Bruno", "Cara", "Valentin", "Greta", "Till", "Milla",
-  "Nikita", "Maria", "Arthur", "Selina", "Bastian", "Jara", "Heinrich", "Marieke", "Sebastian", "Lia"
+"Lukas", "Sophie", "Leon", "Lena", "Benjamin", "Mia", "Paul", "Emma", "Jonas", "Hannah",
+"Luca", "Laura", "Finn", "Lara", "Maximilian", "Anna", "Tim", "Lea", "Moritz", "Lina",
+"Felix", "Sarah", "Julian", "Johanna", "Nico", "Marie", "Philipp", "Emilia", "Elias", "Sophia",
+"Anton", "Leonie", "Tom", "Amelie", "Fabian", "Clara", "Mats", "Paula", "Jakob", "Mara",
+"Jannik", "Isabella", "Luis", "Emily", "David", "Julia", "Oskar", "Zoe", "Nils", "Emily",
+"Simon", "Jasmin", "Niklas", "Matilda", "Jonathan", "Victoria", "Vincent", "Maja", "Linus", "Charlotte",
+"Samuel", "Anastasia", "Pauline", "Maja", "Philip", "Rosa", "Emil", "Sophie", "Leonard", "Nele",
+"Joel", "Melina", "Marlon", "Celine", "Bennet", "Paulina", "Nikolai", "Theresa", "Milo", "Caroline",
+"Robin", "Mara", "Tobias", "Isabel", "Julius", "Valentina", "Erik", "Vanessa", "Max", "Felicia",
+"Dominik", "Elisabeth", "Jan", "Pauline", "Samuel", "Jana", "Kai", "Jolina", "Julius", "Lotta",
+"Levi", "Helen", "Jannis", "Alina", "Maxim", "Alicia", "Liam", "Anna-Lena", "Lincoln", "Isabelle",
+"Finnley", "Johanna", "Theo", "Anja", "Luca", "Amalia", "Lennart", "Marleen", "Matti", "Alisa",
+"Noah", "Vivien", "Henry", "Lucia", "Emilio", "Annika", "Jona", "Frieda", "Marcel", "Leona",
+"Adrian", "Elisa", "Karl", "Livia", "Hannes", "Paula", "Marvin", "Thalia", "Jasper", "Henriette",
+"Ferdinand", "Emelie", "Darian", "Fiona", "Tristan", "Elena", "Marius", "Livia", "Fabio", "Felicitas",
+"Leonardo", "Melissa", "Samson", "Nora", "Bruno", "Cara", "Valentin", "Greta", "Till", "Milla",
+"Nikita", "Maria", "Arthur", "Selina", "Bastian", "Jara", "Heinrich", "Marieke", "Sebastian", "Lia"
 ];
 
+    
+    function generarFechaAleatoria() {
+        var año = Math.floor(Math.random() * (2022 - 2000 + 1)) + 2000;
+        var mes = Math.floor(Math.random() * 12) + 1;
+        var dia = Math.floor(Math.random() * 31) + 1;
+        var hora = Math.floor(Math.random() * 24);
+        var minuto = Math.floor(Math.random() * 60);
+        var segundo = Math.floor(Math.random() * 60);
 
-        function generar(){
-            var num = parseInt(document.getElementById("num").value);
-            if (num < 1) { num = 5;  document.getElementById("num").value = 5; }
-				alumnos = "CREATE DATABASE IF NOT EXISTS universidad;<br>" + 
-        "USE universidad;<br>" + 
-        "CREATE TABLE IF NOT EXISTS alumnos(<br>" +
-        "&emsp;alumno_matricula INT UNSIGNED NOT NULL UNIQUE, <br>" + 
-        "&emsp;alumno_ap1 VARCHAR(255) NOT NULL, <br>" + 
-        "&emsp;alumno_ap2 VARCHAR(255), <br>" + 
-        "&emsp;alumno_nombres VARCHAR(255) NOT NULL, <br>" + 
-        "&emsp;alumno_correo VARCHAR(255) NOT NULL UNIQUE<br>" + 
-        ");<br>" +
-	"DELETE FROM alumnos;<br>" +   
-        "INSERT INTO alumnos(alumno_matricula, alumno_ap1, alumno_ap2, alumno_nombres, alumno_correo) VALUES<br>", matricula = 222206011;
-				
-            for (let i=1; i<(num+1); i++){
-                alumnos += "&emsp;(" + (matricula) + ", '" + (apellidosEspanoles[Math.floor(Math.random() * 149) + 1]) + "', '" + (apellidosJaponeses[Math.floor(Math.random() * 149) + 1]) + "', '" + (nombresIngleses[Math.floor(Math.random() * 149) + 1]) + " " + (nombresAlemanes[Math.floor(Math.random() * 149) + 1]) + "', '" + (matricula++) + "@universidad.mx" + "')";
-                
-                if (i == num){
-                    alumnos += ";";
-				}
-                else{
-                    alumnos += ",<br>";
-                }
-            }
-            document.getElementById("salida").innerHTML = alumnos;                                        
-        }
-        function generarSQL(){
-            var archivo = document.createElement('a');
-                var salida = alumnos.replace(/<br>/g, '\n').replace(/&emsp;/g, '\t').trim();
-                archivo.setAttribute('href', 'data:text/plane;charset=utf-8,'+ encodeURIComponent(salida));
-                archivo.setAttribute('download', "universidad.sql");
-                archivo.style.display = 'none';
-                document.body.appendChild(archivo);
-                archivo.click();
-                document.body.removeChild(archivo);
-        }
+        // Crea el objeto Date con los valores aleatorios
+        var fechaAleatoria = new Date(año, mes - 1, dia, hora, minuto, segundo);
 
-        function generarCSV() {
-            var archivo = document.createElement('a');
-            var salida = "alumno_matricula,alumno_ap1,alumno_ap2,alumno_nombres,alumno_correo\n";
+        // Formatea la fecha en el formato deseado (Año-Mes-Día)
+        var fechaFormateada = fechaAleatoria.toISOString().split("T")[0];
 
-            var lines = alumnos.split(';');
-            lines.forEach(function (line) {
-                if (line.trim() !== '') {
-                    var values = line.split(',');
-                    salida += values[0].replace('&emsp;(', '').trim() + ',' +
-                        values[1].replace(/'/g, '').trim() + ',' +
-                        values[2].replace(/'/g, '').trim() + ',' +
-                        values[3].replace(/'/g, '').trim() + ',' +
-                        values[4].replace(/'/g, '').replace(')', '').trim() + '\n';
-                }
-            });
-        
-        archivo.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(salida));
-            archivo.setAttribute('download', "universidad.csv");
-            archivo.style.display = 'none';
-            document.body.appendChild(archivo);
-            archivo.click();
-            document.body.removeChild(archivo);
+        return fechaFormateada;
+      }
+
+
+
+
+    function generarAlumnos() {
+
+      var numeroVentas = document.getElementById("NumRegistros").value;
+      var select = document.getElementById("usuario");
+      var opcion = select.options[select.selectedIndex].value;
+      var salida = ` CREATE DATABASE IF NOT EXISTS sistema_escolar;<br> USE sistema_escolar;<br> CREATE TABLE IF NOT EXISTS ${opcion} (<br>  expediente INT(11) UNSIGNED NOT NULL UNIQUE,<br>  apellido1 VARCHAR(255) NOT NULL,<br>  apellido2 VARCHAR(255),<br>  nombres VARCHAR(255) NOT NULL,<br>  correo_inst VARCHAR(255) NOT NULL UNIQUE<br>, contrasena VARCHAR(100), fecha_nac DATE);<br> INSERT INTO ${opcion} (expediente, apellido1, apellido2, nombres, correo_inst, contrasena, fecha_nac) VALUES <br>`;
+      var matriculaAlumno = 222200017;
+      var matriculaAcademico = 777700020;
+      var matriculaAdmin = 999900020;
+
+      switch (opcion) {
+      case "alumnos":
+      for (let i = 0; i < numeroVentas; i++) {
+        salida += ` (${matriculaAlumno}, '${apellidosEspanoles[Math.floor(Math.random() * 149)]}', 
+        '${apellidosJaponeses[Math.floor(Math.random() * 149)]}', '${nombresIngleses[Math.floor(Math.random() * 149)]} 
+        ${nombresAlemanes[Math.floor(Math.random() * 149)]}', '${matriculaAlumno++}@unison.mx', MD5('123'), '`+generarFechaAleatoria()+`' ),`;
+
+        if (i == numeroVentas-1) {
+          salida = salida.slice(0, -1) + ";"; // Eliminar la coma y agregar punto y coma
         }
 
-        function generarJSON() {
-            var archivo = document.createElement('a');
-            var data = {
-                alumnos: []
-            };
+        salida += " <br>";
+      }
+      break;
 
-            var lines = alumnos.split(';');
-            lines.forEach(function (line) {
-                if (line.trim() !== '') {
-                    var values = line.split(',');
-                    data.alumnos.push({
-                        alumno_matricula: values[0].replace('&emsp;(', '').trim(),
-                        alumno_ap1: values[1].replace(/'/g, '').trim(),
-                        alumno_ap2: values[2].replace(/'/g, '').trim(),
-                        alumno_nombres: values[3].replace(/'/g, '').trim(),
-                        alumno_correo: values[4].replace(/'/g, '').replace(')', '').trim()
-                    });
-                }
-            });
+      case "academicos":
+        for (let i = 0; i < numeroVentas; i++) {
+          salida += ` (${matriculaAcademico}, '${apellidosEspanoles[Math.floor(Math.random() * 149)]}', 
+          '${apellidosJaponeses[Math.floor(Math.random() * 149)]}', '${nombresIngleses[Math.floor(Math.random() * 149)]} 
+          ${nombresAlemanes[Math.floor(Math.random() * 149)]}', '${matriculaAcademico++}@acadunison.mx', MD5('123'), '`+ generarFechaAleatoria()+`' ),`;
 
-            var jsonOutput = JSON.stringify(data, null, 2);
+          if (i == numeroVentas-1) {
+            salida = salida.slice(0, -1) + ";"; // Eliminar la coma y agregar punto y coma
+          }
 
-            archivo.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonOutput));
-            archivo.setAttribute('download', "universidad.json");
-            archivo.style.display = 'none';
-            document.body.appendChild(archivo);
-            archivo.click();
-            document.body.removeChild(archivo);
+          salida += " <br>";
         }
+      break;
 
-    </script>
+      case "administrativos":
+        for (let i = 0; i < numeroVentas; i++) {
+          salida += ` (${matriculaAdmin}, '${apellidosEspanoles[Math.floor(Math.random() * 149)]}', 
+          '${apellidosJaponeses[Math.floor(Math.random() * 149)]}', '${nombresIngleses[Math.floor(Math.random() * 149)]} 
+          ${nombresAlemanes[Math.floor(Math.random() * 149)]}', '${matriculaAdmin++}@adminunison.mx', MD5('123'), '`+ generarFechaAleatoria()+`' ),`;
+
+          if (i == numeroVentas-1) {
+            salida = salida.slice(0, -1) + ";"; // Eliminar la coma y agregar punto y coma
+          }
+
+          salida += " <br>";
+        }
+      break;
+
+    }
+
+      document.getElementById("salida").innerHTML = salida;
+    }
+
+
+    function descargarSQL() {
+      var contenidoSQL = document.getElementById("salida").innerText;
+      var blob = new Blob([contenidoSQL], { type: "text/plain" });
+      var url = window.URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "alumnos.sql";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }
+
+
+
+
+  </script>
 </head>
+
 <body>
-    <input type="button" value="Generar alumnos" onclick="generar()">
-    <input type="button" value="Generar SQL" onclick="generarSQL()">
-    <input type="button" value="Generar CSV" onclick="generarCSV()">
-    <input type="button" value="Generar JSON" onclick="generarJSON()">
-    <input type="number" id="num" placeholder="Numero de entradas" value="5">
-    <p id="salida"></p>
+
+  Número de alumnos/academicos/administrativos a generar:
+  <input type="number" id="NumRegistros" required/>
+  <select name="opcion" id="usuario">
+    <option value="alumnos">
+      Alumnos
+    </option>
+
+    <option value="academicos">
+      Académicos
+    </option>
+
+    <option value="administrativos">
+    Administrativos
+    </option></select>
+  <br>
+  <input type="button" value="Generar en SQL" onclick="generarAlumnos()" />
+  <input type="button" value="Descargar archivo SQL" onclick="descargarSQL()">
+  <p id="salida"></p>
+
+
 </body>
+
 </html>
